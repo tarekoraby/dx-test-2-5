@@ -1,8 +1,5 @@
 
-Ktypescript:S1128"(Remove this unused import of 'AutoCrud'.(ëÇ´‡8Ûı¡Â1
-Qtypescript:S1128")Remove this unused import of 'TextField'.(¹Ùäšøÿÿÿÿ8Ûı¡Â1
-Utypescript:S6759"-Mark the props of the component as read-only.(¡»ÿ¨ıÿÿÿÿ8Ûı¡Â1
-atypescript:S1854">Remove this useless assignment to variable "setSelectedItems".(Š§³ó8Ûı¡Â1
-btypescript:S1854"?Remove this useless assignment to variable "setEditedEmployee".(åß·Ü8Ûı¡Â1
-°typescript:S6478"ŒDo not define components during render. React will see a new component type on every render and destroy the entire subtree\u8217s DOM nodes and state. Instead, move this component definition out of the parent component \u8220TaskThreeView\u8221 and pass data as props.(„½‹ı8Ûı¡Â1
-itypescript:S6644!"AUnnecessary use of conditional expression for default assignment.(•âÕÚøÿÿÿÿ8Ûı¡Â1
+Utypescript:S6759"-Mark the props of the component as read-only.(¡»ÿ¨ıÿÿÿÿ8õâÛÂ1
+°typescript:S6478"ŒDo not define components during render. React will see a new component type on every render and destroy the entire subtree\u8217s DOM nodes and state. Instead, move this component definition out of the parent component \u8220TaskThreeView\u8221 and pass data as props.(„½‹ı8üçÂ1
+itypescript:S6644"AUnnecessary use of conditional expression for default assignment.(•âÕÚøÿÿÿÿ8üçÂ1
+dtypescript:S6644("AUnnecessary use of conditional expression for default assignment.(•„˜8üçÂ1

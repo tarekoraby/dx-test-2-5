@@ -1,9 +1,8 @@
 import {TaskThreeService, TaskOneAndTwoService} from 'Frontend/generated/endpoints.js';
-import {AutoCrud, AutoForm, AutoFormLayoutRendererProps, AutoGrid} from "@hilla/react-crud";
+import {AutoForm, AutoFormLayoutRendererProps, AutoGrid} from "@hilla/react-crud";
 import TeamDtoModel from "Frontend/generated/com/example/application/dtos/TeamDtoModel.js";
 import {GridColumn} from "@hilla/react-components/GridColumn.js";
 import TeamDto from "Frontend/generated/com/example/application/dtos/TeamDto.js";
-import {TextField} from "@hilla/react-components/TextField.js";
 import {VerticalLayout} from "@hilla/react-components/VerticalLayout.js";
 import {ComboBox} from "@hilla/react-components/ComboBox.js";
 import EmployeeDtoModel from "Frontend/generated/com/example/application/dtos/EmployeeDtoModel.js";
@@ -19,13 +18,9 @@ function EmployeeCountRenderer({ item }: { item: TeamDto }) {
     );
 }
 
-
-
 export default function TaskThreeView() {
-    const [selectedItems, setSelectedItems] = useState<TeamDto[]>([]);
-    const [employees, setEmployees] = useState<EmployeeDto[] | null>(null); // [EmployeeDto
+    const [employees, setEmployees] = useState<EmployeeDto[] | null>(null);
     const [editedEmployee, setEditedEmployee] = useState<EmployeeDto | null>(null);
-
     function CustomLayoutRenderer({ children, form }: AutoFormLayoutRendererProps<EmployeeDtoModel>) {
         const fieldsMapping = new Map<string, JSX.Element>();
         children.forEach((field) => fieldsMapping.set(field.props?.propertyInfo?.name, field));
@@ -39,10 +34,16 @@ export default function TaskThreeView() {
                     item-label-path="name"
                     item-value-path="id"
                     items={employeesArray}
-                    onselectionchange={(e) => {
-                        return;
+                    onValueChanged={(e) => {
+                        const value = e.detail.value;
+                        const employee = employeesArray?.find((employee) => employee.id === Number(value));
+                        setEditedEmployee(employee ? employee : null);
                     }}
                 />
+                {fieldsMapping.get('id')}
+                {fieldsMapping.get('name')}
+                {fieldsMapping.get('email')}
+
             </VerticalLayout>
         );
     }
@@ -60,7 +61,6 @@ export default function TaskThreeView() {
                   customColumns={[
                     <GridColumn key={'employee-count-column'} autoWidth renderer={EmployeeCountRenderer} header="Employees count" />
                   ]}
-                  selectedItems={selectedItems}
                   onActiveItemChanged={(e) => {
                       const item = e.detail.value;
                       setEmployees(item ? item.employees : null);
