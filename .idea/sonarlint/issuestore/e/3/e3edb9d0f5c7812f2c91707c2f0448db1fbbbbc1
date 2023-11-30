@@ -1,0 +1,4 @@
+
+Ttypescript:S1128"1Remove this unused import of 'HelloWorldService'.(ñáˆ‡8ÝëÑ‹Â1
+³typescript:S6478"ŠDo not define components during render. React will see a new component type on every render and destroy the entire subtree\u8217s DOM nodes and state. Instead, move this component definition out of the parent component \u8220TaskTwoView\u8221 and pass data as props.(¤‘©‡ùÿÿÿÿ8ÆÓÚ‹Â1
+Utypescript:S6759"-Mark the props of the component as read-only.(¤‘©‡ùÿÿÿÿ8ÆÓÚ‹Â1
